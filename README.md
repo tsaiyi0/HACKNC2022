@@ -1,2 +1,2 @@
 # HACKNC2022
-#Spotify and Apple Music Merger
+#Give a music rec and get a music rec!

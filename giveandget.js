@@ -3,7 +3,7 @@ var reasondict = {};
 
 function randomnumgen() {
     var randomnum = Math.floor(1000000 + Math.random() * 9000000);
-    if (!randomnum in linkdict) {
+    if (linkdict[randomnum] == undefined) {
         return randomnum;
     }
     else {
@@ -11,19 +11,23 @@ function randomnumgen() {
     }
 }
 
-function randomKeyFunc (linkdict) {
+function randomKeyFunc(linkdict) {
     var keys = Object.keys(linkdict);
     return obj[keys[keys.length * Math.random() << 0]];
 }
 
 function give() {
   
-    var linktext = document.getElementById("linktextbox");
-    var reasontext = document.getElementById("reasontextbox");
+    var linktext = document.getElementById("linktextbox").value;
+    var reasontext = document.getElementById("reasontextbox").value;
     var randomnum = randomnumgen();
 
     linkdict[randomnum] = linktext;
     reasondict[randomnum] = reasontext;
+
+    console.log(randomnum);
+    console.log(linkdict[randomnum]);
+    console.log(reasondict[randomnum]);
     
 };
 
